@@ -1,612 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Schedule your auto repair appointment online at MGE California. We confirm within one business hour. Convenient service in Hawthorne, South Bay, CA.">
-  <title>Book an Appointment | MGE California - Schedule Online</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/png" href="images/logo.png">
-  <link rel="apple-touch-icon" href="images/logo.png">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="MGE California">
-  <meta property="og:title" content="Book an Appointment | MGE California - Schedule Online">
-  <meta property="og:description" content="Schedule your auto repair appointment online at MGE California. We confirm within one business hour. Convenient service in Hawthorne, South Bay, CA.">
-  <meta property="og:url" content="https://mgesouthbay.com/appointments.html">
-  <meta property="og:image" content="https://mgesouthbay.com/images/our_promise_photo.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Book an Appointment | MGE California - Schedule Online">
-  <meta name="twitter:description" content="Schedule your auto repair appointment online at MGE California. We confirm within one business hour. Convenient service in Hawthorne, South Bay, CA.">
-  <meta name="twitter:image" content="https://mgesouthbay.com/images/our_promise_photo.jpg">
-  <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
-  <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
-  <script>
-    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/speed-insights/script.js"></script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "AutoRepair",
-    "name": "MGE California",
-    "url": "https://mgesouthbay.com",
-    "telephone": "+1-310-546-8999",
-    "email": "SameDayAutoServices@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "13900 Inglewood Ave",
-      "addressLocality": "Hawthorne",
-      "addressRegion": "CA",
-      "postalCode": "90250",
-      "addressCountry": "US"
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "08:00",
-        "closes": "18:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "09:00",
-        "closes": "16:00"
-      }
-    ]
-  }
-  </script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18032292795"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-18032292795');
-  </script>
-</head>
-<body>
+// Mobile Navigation
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('nav');
+const navClose = document.getElementById('navClose');
+const overlay = document.getElementById('overlay');
 
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="container">
-      <div class="hours">Mon - Fri: 8:00 AM - 6:00 PM | Sat: 9:00 AM - 4:00 PM</div>
-      <div>Call Us: <a href="tel:+13105468999">(310) 546-8999</a> <a href="sms:+13105468999" class="sms-link">Text Us</a></div>
-    </div>
-  </div>
+function openNav() {
+  nav.classList.add('active');
+  overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
 
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <a href="index.html" class="logo">
-        <picture>
-          <source srcset="images/logo.webp" type="image/webp">
-          <img src="images/logo.png" alt="MGE California Logo" class="logo-img">
-        </picture>
-        <h1>MGE California<br><span>Premier Auto Service &amp; Repair</span></h1>
-      </a>
-      <nav id="nav">
-        <button class="nav-close" id="navClose" aria-label="Close navigation menu" style="display:none">&times;</button>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="specials.html">Specials</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="mission.html">Our Mission</a></li>
-          <li><a href="warranty.html">Warranty</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="directions.html">Directions</a></li>
-          <li><a href="appointments.html" class="btn-appointment active">Book Now</a></li>
-        </ul>
-      </nav>
-      <div class="hamburger" id="hamburger" aria-label="Open navigation menu" role="button" tabindex="0">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-  </header>
-  <div class="overlay" id="overlay"></div>
+function closeNav() {
+  nav.classList.remove('active');
+  overlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
 
-  <!-- Page Hero -->
-  <section class="page-hero">
-    <div class="container">
-      <h2>Schedule an Appointment</h2>
-      <p>Request your preferred date and time — we'll confirm your appointment</p>
-      <div class="breadcrumb"><a href="index.html">Home</a> / Appointments</div>
-    </div>
-  </section>
+if (hamburger) hamburger.addEventListener('click', openNav);
+if (navClose) navClose.addEventListener('click', closeNav);
+if (overlay) overlay.addEventListener('click', closeNav);
 
-  <!-- Appointment Form -->
-  <section class="section" id="appointment-form-section">
-    <div class="container">
-      <div class="appointment-wrapper">
-        <div>
-          <div class="section-title" style="text-align:left; margin-bottom:30px;">
-            <h2 style="font-size:1.8rem;">Request an Appointment</h2>
-            <p>Fill out the form below and we'll contact you to confirm your appointment details. The date and time you request may not be available — we will reach out to confirm.</p>
-          </div>
-          <form id="appointment-form" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="firstName">First Name *</label>
-                <input type="text" id="firstName" name="firstName" required>
-                <span class="form-error" id="firstName-error">First name is required (minimum 2 characters).</span>
-              </div>
-              <div class="form-group">
-                <label for="lastName">Last Name *</label>
-                <input type="text" id="lastName" name="lastName" required>
-                <span class="form-error" id="lastName-error">Last name is required (minimum 2 characters).</span>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" required>
-                <span class="form-error" id="email-error">Please enter a valid email address.</span>
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone *</label>
-                <input type="tel" id="phone" name="phone" required>
-                <span class="form-error" id="phone-error">Please enter a valid US phone number.</span>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="vehicleYear">Vehicle Year *</label>
-                <input type="text" id="vehicleYear" name="vehicleYear" required>
-                <span class="form-error" id="vehicleYear-error">Vehicle year is required.</span>
-              </div>
-              <div class="form-group">
-                <label for="vehicleMake">Vehicle Make *</label>
-                <input type="text" id="vehicleMake" name="vehicleMake" required>
-                <span class="form-error" id="vehicleMake-error">Vehicle make is required.</span>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="vehicleModel">Vehicle Model *</label>
-                <input type="text" id="vehicleModel" name="vehicleModel" required>
-                <span class="form-error" id="vehicleModel-error">Vehicle model is required.</span>
-              </div>
-              <div class="form-group">
-                <label for="service">Service Needed *</label>
-                <select id="service" name="service" required>
-                  <option value="" disabled selected>Select a service...</option>
-                  <option value="Oil &amp; Filter Change">Oil &amp; Filter Change</option>
-                  <option value="Brake Service">Brake Service</option>
-                  <option value="A/C Service">A/C Service</option>
-                  <option value="Engine Repair">Engine Repair</option>
-                  <option value="Transmission Service">Transmission Service</option>
-                  <option value="Wheel Alignment">Wheel Alignment</option>
-                  <option value="Tire Service">Tire Service</option>
-                  <option value="Diagnostics">Diagnostics</option>
-                  <option value="Emissions/Smog">Emissions/Smog</option>
-                  <option value="Suspension">Suspension</option>
-                  <option value="Headlight Restoration">Headlight Restoration</option>
-                  <option value="Hybrid Service">Hybrid Service</option>
-                  <option value="Fleet Service">Fleet Service</option>
-                  <option value="Other">Other</option>
-                </select>
-                <span class="form-error" id="service-error">Please select a service.</span>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="preferredDate">Preferred Date *</label>
-                <input type="date" id="preferredDate" name="preferredDate" required>
-                <span class="form-error" id="preferredDate-error">Please select a valid future date.</span>
-              </div>
-              <div class="form-group">
-                <label for="preferredTime">Preferred Time *</label>
-                <select id="preferredTime" name="preferredTime" required>
-                  <option value="" disabled selected>Select a time...</option>
-                  <option value="8:00 AM">8:00 AM</option>
-                  <option value="9:00 AM">9:00 AM</option>
-                  <option value="10:00 AM">10:00 AM</option>
-                  <option value="11:00 AM">11:00 AM</option>
-                  <option value="12:00 PM">12:00 PM</option>
-                  <option value="1:00 PM">1:00 PM</option>
-                  <option value="2:00 PM">2:00 PM</option>
-                  <option value="3:00 PM">3:00 PM</option>
-                  <option value="4:00 PM">4:00 PM</option>
-                  <option value="5:00 PM">5:00 PM</option>
-                </select>
-                <span class="form-error" id="preferredTime-error">Please select a preferred time.</span>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="comments">Additional Comments</label>
-              <textarea id="comments" name="comments" placeholder="Describe the issue or any additional information..."></textarea>
-            </div>
-            <input type="text" name="website" style="display:none!important" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <button type="submit" class="btn btn-primary" style="width:100%;">Submit Appointment Request</button>
-          </form>
-        </div>
+// Close nav on link click (mobile)
+document.querySelectorAll('nav ul li a').forEach(function(link) {
+  link.addEventListener('click', closeNav);
+});
 
-        <div class="appointment-info">
-          <h3>Contact Information</h3>
-          <p>Have questions or prefer to call? Reach out to us directly and we'll be happy to help.</p>
-          <div class="info-item">
-            <div class="icon">&#128222;</div>
-            <div class="details">
-              <h4>Phone</h4>
-              <p><a href="tel:+13105468999" style="color: inherit;">(310) 546-8999</a> <a href="sms:+13105468999" class="sms-link" style="color: inherit;">Text Us</a></p>
-            </div>
-          </div>
-          <div class="info-item">
-            <div class="icon">&#128205;</div>
-            <div class="details">
-              <h4>Location</h4>
-              <p>13900 Inglewood Ave, Hawthorne, CA 90250</p>
-            </div>
-          </div>
-          <div class="info-item">
-            <div class="icon">&#128339;</div>
-            <div class="details">
-              <h4>Business Hours</h4>
-              <p>Mon - Fri: 8:00 AM - 6:00 PM<br>Sat: 9:00 AM - 4:00 PM<br>Sun: Closed</p>
-            </div>
-          </div>
-          <div class="info-item">
-            <div class="icon">&#128663;</div>
-            <div class="details">
-              <h4>Courtesy Rides</h4>
-              <p>We offer complimentary local courtesy rides while your vehicle is being serviced.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <div class="footer-logo">
-            <picture>
-              <source srcset="images/logo.webp" type="image/webp">
-              <img src="images/logo.png" alt="MGE California Logo">
-            </picture>
-            <span>MGE California</span>
-          </div>
-          <p>Your trusted neighborhood auto repair shop in the South Bay. We provide expert service for all makes and models with a commitment to honesty, quality, and customer satisfaction.</p>
-        </div>
-        <div class="footer-col">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="services.html">Services</a></li>
-              <li><a href="appointments.html">Appointments</a></li>
-            <li><a href="warranty.html">Warranty</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h3>Company</h3>
-          <ul>
-            <li><a href="mission.html">Our Mission</a></li>
-            <li><a href="directions.html">Directions</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h3>Contact</h3>
-          <ul>
-            <li><a href="tel:+13105468999" style="color: inherit;">(310) 546-8999</a> <a href="sms:+13105468999" class="sms-link" style="color: inherit;">Text Us</a></li>
-            <li>SameDayAutoServices@gmail.com</li>
-            <li>13900 Inglewood Ave, Hawthorne, CA 90250</li>
-            <li>Mon-Fri: 8AM - 6PM</li>
-            <li>Sat: 9AM - 4PM</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        &copy; 2026 MGE California. All Rights Reserved.
-        <p style="margin-top: 5px; font-size: 11px;"><a href="privacy.html" style="color: #B0BEC5; text-decoration: none;">Privacy Policy</a></p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
-  <script>
+// Swipe-left to close nav drawer
 (function() {
-  'use strict';
+  if (!nav) return;
+  var touchStartX = 0;
+  var touchStartY = 0;
 
-  // Set minimum date to today
-  const dateInput = document.querySelector('input[name="preferredDate"]');
-  if (dateInput) {
-    const today = new Date().toISOString().split('T')[0];
-    dateInput.setAttribute('min', today);
-  }
+  nav.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].clientX;
+    touchStartY = e.changedTouches[0].clientY;
+  }, { passive: true });
 
-  // Saturday time slot handling
-  const dateField = document.querySelector('input[name="preferredDate"]');
-  const timeField = document.querySelector('select[name="preferredTime"]');
-  if (dateField && timeField) {
-    dateField.addEventListener('change', function() {
-      const selected = new Date(this.value + 'T00:00:00');
-      const day = selected.getDay();
-      const options = timeField.querySelectorAll('option');
-      options.forEach(opt => {
-        opt.disabled = false;
-        opt.style.display = '';
-      });
-      if (day === 0) {
-        alert('We are closed on Sundays. Please choose another date.');
-        this.value = '';
-        return;
-      }
-      if (day === 6) {
-        options.forEach(opt => {
-          const val = opt.value;
-          if (val === '8:00 AM' || val === '4:00 PM' || val === '5:00 PM') {
-            opt.disabled = true;
-          }
-        });
-      }
-    });
-  }
-
-  // --- Inline Validation Helpers ---
-  function setError(fieldName, message) {
-    var group = document.getElementById(fieldName);
-    if (group) group = group.closest('.form-group');
-    if (!group) return;
-    group.classList.add('has-error');
-    var errEl = document.getElementById(fieldName + '-error');
-    if (errEl && message) errEl.textContent = message;
-  }
-
-  function clearError(fieldName) {
-    var group = document.getElementById(fieldName);
-    if (group) group = group.closest('.form-group');
-    if (!group) return;
-    group.classList.remove('has-error');
-  }
-
-  function clearAllErrors() {
-    document.querySelectorAll('.form-group.has-error').forEach(function(g) {
-      g.classList.remove('has-error');
-    });
-  }
-
-  // Clear error on input change
-  document.querySelectorAll('#appointment-form input, #appointment-form select, #appointment-form textarea').forEach(function(el) {
-    el.addEventListener('input', function() { clearError(this.name); });
-    el.addEventListener('change', function() { clearError(this.name); });
-  });
-
-  function validateForm(formData) {
-    var valid = true;
-    clearAllErrors();
-
-    // First Name: required, min 2 chars
-    if (!formData.firstName || formData.firstName.length < 2) {
-      setError('firstName', 'First name is required (minimum 2 characters).');
-      valid = false;
+  nav.addEventListener('touchend', function(e) {
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    var dy = e.changedTouches[0].clientY - touchStartY;
+    // Swipe left: negative dx > 50px and more horizontal than vertical
+    if (dx < -50 && Math.abs(dx) > Math.abs(dy)) {
+      closeNav();
     }
-    // Last Name: required, min 2 chars
-    if (!formData.lastName || formData.lastName.length < 2) {
-      setError('lastName', 'Last name is required (minimum 2 characters).');
-      valid = false;
-    }
-    // Email: required, valid format
-    if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      setError('email', 'Please enter a valid email address.');
-      valid = false;
-    }
-    // Phone: required, valid US format
-    var phoneDigits = (formData.phone || '').replace(/\D/g, '');
-    if (!formData.phone || !/^[\d\s\-().+]+$/.test(formData.phone) || phoneDigits.length < 10 || phoneDigits.length > 11) {
-      setError('phone', 'Please enter a valid US phone number (e.g. (310) 546-8999).');
-      valid = false;
-    }
-    // Vehicle Year
-    if (!formData.vehicleYear) {
-      setError('vehicleYear', 'Vehicle year is required.');
-      valid = false;
-    }
-    // Vehicle Make
-    if (!formData.vehicleMake) {
-      setError('vehicleMake', 'Vehicle make is required.');
-      valid = false;
-    }
-    // Vehicle Model
-    if (!formData.vehicleModel) {
-      setError('vehicleModel', 'Vehicle model is required.');
-      valid = false;
-    }
-    // Service
-    if (!formData.service) {
-      setError('service', 'Please select a service.');
-      valid = false;
-    }
-    // Preferred Date: required, not in the past
-    if (!formData.preferredDate) {
-      setError('preferredDate', 'Please select a preferred date.');
-      valid = false;
-    } else {
-      var today = new Date();
-      today.setHours(0,0,0,0);
-      var selected = new Date(formData.preferredDate + 'T00:00:00');
-      if (selected < today) {
-        setError('preferredDate', 'Date cannot be in the past.');
-        valid = false;
-      }
-    }
-    // Preferred Time
-    if (!formData.preferredTime) {
-      setError('preferredTime', 'Please select a preferred time.');
-      valid = false;
-    }
-    return valid;
-  }
-
-  // Form submit handler
-  const form = document.getElementById('appointment-form');
-  if (!form) return;
-
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-
-    const submitBtn = form.querySelector('button[type="submit"]');
-    if (!submitBtn) return;
-
-    const originalText = submitBtn.textContent;
-
-    // Collect form data
-    const getValue = (name) => {
-      const el = form.querySelector('[name="' + name + '"]');
-      return el ? el.value.trim() : '';
-    };
-
-    const formData = {
-      firstName: getValue('firstName'),
-      lastName: getValue('lastName'),
-      email: getValue('email'),
-      phone: getValue('phone'),
-      vehicleYear: getValue('vehicleYear'),
-      vehicleMake: getValue('vehicleMake'),
-      vehicleModel: getValue('vehicleModel'),
-      service: getValue('service'),
-      preferredDate: getValue('preferredDate'),
-      preferredTime: getValue('preferredTime'),
-      comments: getValue('comments'),
-      website: getValue('website')
-    };
-
-    // Run inline validation
-    if (!validateForm(formData)) {
-      // Scroll to first error
-      var firstErr = form.querySelector('.form-group.has-error');
-      if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return;
-    }
-
-    // Prevent double-submit
-    if (submitBtn.disabled) return;
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Submitting...';
-
-    // Build mailto fallback for when webhook is unavailable
-    const mailSubject = encodeURIComponent('Appointment Request - ' + formData.service);
-    const mailBody = encodeURIComponent(
-      'Name: ' + formData.firstName + ' ' + formData.lastName +
-      '\nPhone: ' + formData.phone +
-      '\nEmail: ' + formData.email +
-      '\nVehicle: ' + formData.vehicleYear + ' ' + formData.vehicleMake + ' ' + formData.vehicleModel +
-      '\nService: ' + formData.service +
-      '\nPreferred Date: ' + formData.preferredDate +
-      '\nPreferred Time: ' + formData.preferredTime +
-      (formData.comments ? '\nComments: ' + formData.comments : '')
-    );
-    const fallbackMailto = 'mailto:SameDayAutoServices@gmail.com?subject=' + mailSubject + '&body=' + mailBody;
-
-    try {
-      const controller = new AbortController();
-      const timeout = setTimeout(function() { controller.abort(); }, 15000);
-
-      const response = await fetch('/api/appointment', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-        signal: controller.signal
-      });
-
-      clearTimeout(timeout);
-
-      let result;
-      try {
-        result = await response.json();
-      } catch {
-        result = { success: false };
-      }
-
-      if (response.ok && result.success === true) {
-        showSuccessMessage(formData.firstName);
-      } else {
-        showErrorWithFallback(result.message || 'Our online booking system is temporarily unavailable.', fallbackMailto);
-        resetBtn();
-      }
-    } catch (error) {
-      showErrorWithFallback('Our online booking system is temporarily unavailable.', fallbackMailto);
-      resetBtn();
-    }
-
-    function resetBtn() {
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalText;
-    }
-  });
-
-  function showSuccessMessage(firstName) {
-    const section = document.getElementById('appointment-form-section');
-    if (!section) return;
-
-    section.style.opacity = '0';
-    section.style.transition = 'opacity 0.3s ease';
-
-    setTimeout(() => {
-      section.innerHTML =
-        '<div style="text-align:center;padding:50px 20px;max-width:500px;margin:0 auto;">' +
-          '<div style="width:70px;height:70px;background:#28a745;border-radius:50%;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;">' +
-            '<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' +
-          '</div>' +
-          '<h2 style="margin:0 0 10px;color:#1a1a2e;">Thank You, ' + firstName + '!</h2>' +
-          '<p style="font-size:17px;color:#555;margin:0 0 10px;">Your appointment request has been submitted.</p>' +
-          '<p style="color:#666;margin:0 0 25px;">We\'ll confirm your time slot via email — usually within <strong>1 business hour</strong> during shop hours.</p>' +
-          '<div style="background:#f8f9fa;border-radius:8px;padding:15px;margin:0 0 25px;">' +
-            '<p style="margin:0;color:#555;">Questions? Call us at</p>' +
-            '<a href="tel:+13105468999" style="font-size:20px;font-weight:bold;color:#1a1a2e;text-decoration:none;">(310) 546-8999</a>' +
-          '</div>' +
-          '<button onclick="location.reload()" style="background:#1a1a2e;color:white;border:none;padding:14px 30px;border-radius:6px;font-size:16px;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background=\'#2d2d4e\'" onmouseout="this.style.background=\'#1a1a2e\'">Book Another Appointment</button>' +
-        '</div>';
-      section.style.opacity = '1';
-    }, 300);
-  }
-
-  function showError(message) {
-    showErrorWithFallback(message, null);
-  }
-
-  function showErrorWithFallback(message, mailtoLink) {
-    const existing = document.getElementById('mge-form-error');
-    if (existing) existing.remove();
-
-    const errorDiv = document.createElement('div');
-    errorDiv.id = 'mge-form-error';
-    errorDiv.style.cssText = 'background:#fef2f2;color:#b91c1c;padding:12px 18px;border-radius:8px;margin-top:15px;font-size:14px;border:1px solid #fecaca;';
-
-    var fallbackHtml = '<span style="font-size:18px;">&#9888;</span> ' + message;
-    if (mailtoLink) {
-      fallbackHtml += '<div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">' +
-        '<a href="tel:+13105468999" style="background:#1a1a2e;color:white;padding:8px 16px;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;">Call (310) 546-8999</a>' +
-        '<a href="' + mailtoLink + '" style="background:#2563eb;color:white;padding:8px 16px;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;">Email Your Request</a>' +
-        '<a href="sms:+13105468999" style="background:#16a34a;color:white;padding:8px 16px;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;">Text Us</a>' +
-        '</div>';
-    } else {
-      fallbackHtml += ' Please call us at <a href="tel:+13105468999" style="color:#b91c1c;font-weight:bold;">(310) 546-8999</a>.';
-    }
-    errorDiv.innerHTML = fallbackHtml;
-
-    const form = document.getElementById('appointment-form');
-    if (form) {
-      const btn = form.querySelector('button[type="submit"]');
-      if (btn && btn.parentNode) {
-        btn.parentNode.insertBefore(errorDiv, btn.nextSibling);
-      } else {
-        form.appendChild(errorDiv);
-      }
-    }
-  }
+  }, { passive: true });
 })();
-  </script>
 
-  <a href="appointments.html" class="sticky-book-now" aria-label="Book an appointment">Book Now</a>
-</body>
-</html>
+// FAQ Accordion
+document.querySelectorAll('.faq-question').forEach(function(question) {
+  question.addEventListener('click', function() {
+    var item = this.parentElement;
+    var isActive = item.classList.contains('active');
+
+    // Close all
+    document.querySelectorAll('.faq-item').forEach(function(faqItem) {
+      faqItem.classList.remove('active');
+    });
+
+    // Open clicked if it wasn't active
+    if (!isActive) {
+      item.classList.add('active');
+    }
+  });
+});
+
+// Appointment Form Submission
+var appointmentForm = document.getElementById('appointmentForm');
+if (appointmentForm) {
+  appointmentForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your appointment request! We will contact you shortly to confirm your appointment details.');
+    this.reset();
+  });
+}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+  anchor.addEventListener('click', function(e) {
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// Header shadow on scroll
+window.addEventListener('scroll', function() {
+  var header = document.querySelector('header');
+  if (window.scrollY > 10) {
+    header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.4)';
+  } else {
+    header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.3)';
+  }
+});
